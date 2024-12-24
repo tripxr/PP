@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.CourierPage"
+             Title="CourierPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <Label Text="Список нарушений"
+                   FontSize="24"
+                   HorizontalOptions="Center" />
+
+            <ListView x:Name="violationsListView"
+                      ItemSelected="OnViolationSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Description}" FontSize="18"/>
+                                <Label Text="{Binding Date}" FontSize="14" TextColor="Gray"/>
+                                <Label Text="{Binding SeverityLevel}" FontSize="16"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Выговор" Clicked="OnPunishClicked"/>
+            <Button Text="Обжаловать" Clicked="OnAppealClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

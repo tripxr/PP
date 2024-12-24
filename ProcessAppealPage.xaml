@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.ProcessAppealPage"
+             Title="ProcessAppealPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <!-- Заголовок -->
+            <Label Text="Список апелляций"
+                   FontSize="24" HorizontalOptions="Center"/>
+
+            <!-- Список апелляций -->
+            <ListView x:Name="appealsListView" 
+                      SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding AppealText}" Detail="{Binding Status}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Кнопки управления -->
+            <HorizontalStackLayout Spacing="10" VerticalOptions="EndAndExpand">
+                <Button Text="Одобрить" Clicked="OnApproveClicked" />
+                <Button Text="Отклонить" Clicked="OnRejectClicked" />
+                <Button Text="Закрыть" Clicked="OnCloseClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.AddViolationPage"
+             Title="AddViolationPage">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <!-- Поле ввода описания нарушения -->
+        <Editor x:Name="descriptionEditor" 
+                Placeholder="Описание нарушения" 
+                AutoSize="TextChanges"/>
+
+        <!-- Выбор пользователя -->
+        <Picker x:Name="userPicker" Title="Выберите пользователя" />
+
+        <!-- Поле ввода уровня серьезности -->
+        <Entry x:Name="severityEntry" 
+               Placeholder="Серьезность (число)" 
+               Keyboard="Numeric"/>
+
+        <!-- Выбор даты -->
+        <DatePicker x:Name="violationDatePicker" />
+
+        <!-- Кнопки управления -->
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="Сохранить" Clicked="OnSaveClicked" />
+            <Button Text="Закрыть" Clicked="OnCloseClicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

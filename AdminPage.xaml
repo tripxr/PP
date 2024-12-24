@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.AdminPage"
+             Title="AdminPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <!-- Заголовок -->
+            <Label Text="Список нарушений"
+                   FontSize="24" HorizontalOptions="Center"/>
+
+            <!-- Список нарушений -->
+            <ListView x:Name="violationsListView" 
+                      SelectionMode="Single" 
+                      ItemSelected="OnViolationSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Description}" Detail="{Binding Date}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Кнопки управления -->
+            <HorizontalStackLayout Spacing="10" VerticalOptions="EndAndExpand">
+                <Button Text="Добавить нарушение" Clicked="OnAddViolationClicked" />
+                <Button Text="Все апелляции" Clicked="OnViewAppealsClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

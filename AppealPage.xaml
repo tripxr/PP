@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.AppealPage"
+             Title="AppealPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <!-- Отображение данных о нарушении -->
+            <Label Text="Нарушение:"
+                   FontSize="24" HorizontalOptions="Center"/>
+
+            <Label x:Name="violationDescriptionLabel" 
+                   FontSize="18" 
+                   TextColor="Gray" 
+                   HorizontalOptions="Center"/>
+
+            <!-- TextBox для ввода апелляции -->
+            <Editor x:Name="appealEditor" 
+                    Placeholder="Опишите ваше обжалование..." 
+                    AutoSize="TextChanges" 
+                    HeightRequest="150"/>
+
+            <!-- Кнопка для отправки апелляции -->
+            <Button Text="Отправить" 
+                    Clicked="OnSubmitAppealClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
